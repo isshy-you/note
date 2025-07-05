@@ -6,14 +6,7 @@
 
 ## 目次
 
-- [AI Challange 2025 setup](AIchallange2025.md)
+- [iiyama PC LEVEL-R789-LC265K-UKX-PALIT への SSD インストール](addSSD.md)
+- [iiyama PC LEVEL-R789-LC265K-UKX-PALIT への ubuntu 22.04LTS インストール](install_ubuntu.md)
 - [GRUBの設定](GRUB.md)
-- [iiyama PC LEVEL-R789-LC265K-UKX-PALIT への ubuntu インストール](install.md)
-
-## 使い方
-
-1. このリポジトリをクローンします
-
-   ```sh
-   git clone https://github.com/isshy-you/note.git
-   ```
+- [AI Challange 2025 setup](AIchallange2025.md)
