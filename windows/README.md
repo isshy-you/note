@@ -7,4 +7,4 @@
 ## 目次
 
 - [WSL2 install](WSL2.md)
-
+- [Stable Diffusion webUI](stable-diffusion)
