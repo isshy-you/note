@@ -171,4 +171,11 @@ cd /aichallenge
 
 ## [進め方](https://automotiveaichallenge.github.io/aichallenge-documentation-2025/development/workspace-usage.html)
 
-- to be continued
+## reference URL
+
+- [AI Challange 2025](https://automotiveaichallenge.github.io/aichallenge-documentation-2025/index.html)
+- [AutomotiveAIChallange-aichallange-2025](https://github.com/AutomotiveAIChallenge/aichallenge-2025)
+- [advent-calendar](https://qiita.com/advent-calendar/2023/jidounten-ai)
+- [ChallangeClub](https://github.com/ChallengeClub)
+- [Vector map builder](https://qiita.com/porizou1/items/b7cabbf573bae342f261)
+- [Vector map builder(youtube)](https://www.youtube.com/watch?v=GvZr707TmuM)
