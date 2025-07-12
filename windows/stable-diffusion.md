@@ -134,6 +134,11 @@ call ./venv/Scripts/activate.bat
 - [【画像付き】AnimateDiffの使い方を解説！動かない時の対処法も紹介](https://ai-bo.jp/animatediff/)
 - ここの通りにやったら動きました
 
+### Stable Diffusion 参考資料
+
+- [github](https://github.com/Stability-AI/stablediffusion)
+- [stable-diffusion-webui/wiki/Features](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features)
+
 ---
 
 ## 今後のメモ
