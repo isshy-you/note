@@ -179,3 +179,4 @@ cd /aichallenge
 - [ChallangeClub](https://github.com/ChallengeClub)
 - [Vector map builder](https://qiita.com/porizou1/items/b7cabbf573bae342f261)
 - [Vector map builder(youtube)](https://www.youtube.com/watch?v=GvZr707TmuM)
+- [trajectory editor](https://github.com/AutomotiveAIChallenge/aichallenge-trajectory-editor.git)
