@@ -7,7 +7,7 @@
 sudo apt --purge remove -y '*nvidia*'
 sudo apt --purge remove -y '*cuda*'
 sudo apt --purge remove -y '*cudnn*'
-sudo apt autoremove –y
+sudo apt autoremove
 ```
 
 - NVIDIA Driver install
@@ -57,6 +57,29 @@ sudo sh NVIDIA-Linux-x86_64-570.168.run
   - 以上を選ぶと、sh スクリプトが現れる。これを実行すればよい。
 
 ```bash
+wget https://developer.download.nvidia.com/compute/cuda/12.8.0/local_installers/cuda_12.8.0_570.86.10_linux.run
+sudo sh cuda_12.8.0_570.86.10_linux.run
+```
+
+- cuda に対応したドライババージョンの入手
+  - [Disiplay Driver Archive](https://www.nvidia.com/ja-jp/drivers/unix/linux-amd64-display-archive/)
+    - [570.124.04](https://www.nvidia.com/ja-jp/drivers/details/241269/)
+
+- cuda の インストーラで driver もインストールできる
+  - EULA への accept で次のページへ
+  - [x] Driver
+    - [x] Driver 560.124.06
+  - [x] CUDA Toolkit 12.8
+  - [x] CUDA Demo Suite 12.8
+  - [x] CUDA Documentationo 12.8
+  - [ ] Kernel Objects
+    - [ ] nvidia-Fs
+
+```bash
+sudo apt --purge remove -y '*nvidia*'
+sudo apt --purge remove -y '*cuda*'
+sudo apt --purge remove -y '*cudnn*'
+sudo apt autoremove –y
 wget https://developer.download.nvidia.com/compute/cuda/12.8.1/local_installers/cuda_12.8.1_570.124.06_linux.run
 sudo sh cuda_12.8.1_570.124.06_linux.run
 ```
@@ -66,6 +89,6 @@ sudo sh cuda_12.8.1_570.124.06_linux.run
 ```text
 (.bashrc)
 # Set PATHS for CUDA
-export PATH=/usr/local/cuda-12.2/bin:$PATH
+export PATH=/usr/local/cuda-12.8/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-12.8/lib64:$LD_LIBRARY_PATH
 ```

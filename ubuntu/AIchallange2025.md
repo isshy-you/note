@@ -179,4 +179,24 @@ cd /aichallenge
 - [ChallangeClub](https://github.com/ChallengeClub)
 - [Vector map builder](https://qiita.com/porizou1/items/b7cabbf573bae342f261)
 - [Vector map builder(youtube)](https://www.youtube.com/watch?v=GvZr707TmuM)
-- [trajectory editor](https://github.com/AutomotiveAIChallenge/aichallenge-trajectory-editor.git)
+
+- [trajectory editor](https://github.com/AutomotiveAIChallenge/aichallenge-trajectory-editor)
+  - ここの Readme.md に従ってインストールすれば動きました。
+  - 以下は、単体で動作させようとした、過去メモ
+
+```bash
+git clone https://github.com/AutomotiveAIChallenge/aichallenge-trajectory-editor.git
+cd aichallenge-trajectory-editor
+pyenv local 3.11.7
+pip install --upgrade pip
+pip install numpy matplotlib pandas
+export PATH="$PATH:$HOME/git/aichallenge-trajectory-editor/cmd_line/"
+chmod +x cmd_line/csv_viewer
+```
+
+- 実行して ”CSV Plot Tool” の window が開いたら 以下を開いてみる
+- [Load trj]
+  - ichallenge-trajectory-editor/csv/*.csv
+  - aichallenge/workspace/src/aichallenge_submit/simple_trajectory_generator/data/raceline_awsim_15km.csv
+  - aichallenge/workspace/src/aichallenge_submit/simple_trajectory_generator/data/raceline_awsim_30km.csv
+  
