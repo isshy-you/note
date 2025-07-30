@@ -182,7 +182,6 @@ cd /aichallenge
 
 - [trajectory editor](https://github.com/AutomotiveAIChallenge/aichallenge-trajectory-editor)
   - ここの Readme.md に従ってインストールすれば動きました。
-  - 以下は、単体で動作させようとした、過去メモ
 
 ```bash
 git clone https://github.com/AutomotiveAIChallenge/aichallenge-trajectory-editor.git
@@ -192,6 +191,23 @@ pip install --upgrade pip
 pip install numpy matplotlib pandas
 export PATH="$PATH:$HOME/git/aichallenge-trajectory-editor/cmd_line/"
 chmod +x cmd_line/csv_viewer
+```
+
+- [trajectory editor plugin](https://github.com/iASL-Gifu/aichallenge-trajectory-editor)
+  - ここの Readme.md に従ってインストールすれば動きました。
+  - だけどうまく編集できない。。。
+
+```bash
+cd aichallenge-2025
+./docker_build.sh dev
+./docker_run.sh dev gpu
+```
+
+```docker
+cd /aichallenge
+./build_autoware.bash
+# 必要に応じて .bashrc を編集
+./run_evaluation.bash
 ```
 
 - 実行して ”CSV Plot Tool” の window が開いたら 以下を開いてみる
