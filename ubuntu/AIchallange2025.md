@@ -190,7 +190,7 @@ pyenv local 3.11.7
 pip install --upgrade pip
 pip install numpy matplotlib pandas
 export PATH="$PATH:$HOME/git/aichallenge-trajectory-editor/cmd_line/"
-chmod +x cmd_line/csv_viewer
+chmod +x cmd_line/csv_viewer cmd_line/csv_editor
 ```
 
 - [trajectory editor plugin](https://github.com/iASL-Gifu/aichallenge-trajectory-editor)
