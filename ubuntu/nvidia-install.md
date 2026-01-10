@@ -3,12 +3,12 @@
 
 - Delete NVIDIA
 
-```bash
-sudo apt --purge remove -y '*nvidia*'
-sudo apt --purge remove -y '*cuda*'
-sudo apt --purge remove -y '*cudnn*'
-sudo apt autoremove
-```
+  ```bash
+  sudo apt --purge remove -y '*nvidia*'
+  sudo apt --purge remove -y '*cuda*'
+  sudo apt --purge remove -y '*cudnn*'
+  sudo apt autoremove
+  ```
 
 - NVIDIA Driver install
   - 参考記事：<https://qiita.com/tmasada/items/f77808c870c829c076fa>
@@ -25,9 +25,9 @@ sudo apt autoremove
     - NVIDIA-Linux-x86_64-570.168.run のダウンロードが始まる。
     - 以下でインストールできる
 
-```bash
-sudo sh NVIDIA-Linux-x86_64-570.168.run
-```
+  ```bash
+  sudo sh NVIDIA-Linux-x86_64-570.168.run
+  ```
 
 - Pytorch のバージョンのチェック
   - <https://pytorch.org/get-started/locally/> にて、pytorch がどの CUDA バージョンに対応しているかを確認
@@ -56,10 +56,10 @@ sudo sh NVIDIA-Linux-x86_64-570.168.run
     - runfile (local)
   - 以上を選ぶと、sh スクリプトが現れる。これを実行すればよい。
 
-```bash
-wget https://developer.download.nvidia.com/compute/cuda/12.8.0/local_installers/cuda_12.8.0_570.86.10_linux.run
-sudo sh cuda_12.8.0_570.86.10_linux.run
-```
+  ```bash
+  wget https://developer.download.nvidia.com/compute/cuda/12.8.0/local_installers/cuda_12.8.0_570.86.10_linux.run
+  sudo sh cuda_12.8.0_570.86.10_linux.run
+  ```
 
 - cuda に対応したドライババージョンの入手
   - [Disiplay Driver Archive](https://www.nvidia.com/ja-jp/drivers/unix/linux-amd64-display-archive/)
@@ -75,20 +75,60 @@ sudo sh cuda_12.8.0_570.86.10_linux.run
   - [ ] Kernel Objects
     - [ ] nvidia-Fs
 
-```bash
-sudo apt --purge remove -y '*nvidia*'
-sudo apt --purge remove -y '*cuda*'
-sudo apt --purge remove -y '*cudnn*'
-sudo apt autoremove –y
-wget https://developer.download.nvidia.com/compute/cuda/12.8.1/local_installers/cuda_12.8.1_570.124.06_linux.run
-sudo sh cuda_12.8.1_570.124.06_linux.run
-```
+  ```bash
+  sudo apt --purge remove -y '*nvidia*'
+  sudo apt --purge remove -y '*cuda*'
+  sudo apt --purge remove -y '*cudnn*'
+  sudo apt autoremove –y
+  wget https://developer.download.nvidia.com/compute/cuda/12.8.1/local_installers/cuda_12.8.1_570.124.06_linux.run
+  sudo sh cuda_12.8.1_570.124.06_linux.run
+  ```
 
 - .bashrc に以下のパス設定も入れ込む
 
-```text
-(.bashrc)
-# Set PATHS for CUDA
-export PATH=/usr/local/cuda-12.8/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-12.8/lib64:$LD_LIBRARY_PATH
-```
+  ```text
+  (.bashrc)
+  # Set PATHS for CUDA
+  export PATH=/usr/local/cuda-12.8/bin:$PATH
+  export LD_LIBRARY_PATH=/usr/local/cuda-12.8/lib64:$LD_LIBRARY_PATH
+  ```
+
+- intel の Graphicsを使って、NVIDIAはGPU専用にしてみたい
+
+  - PCI接続の確認
+
+  ```bash
+  lspci -k | grep -EA3 'VGA|3D|Display'
+  ```
+
+  - console 出力
+
+  ```console
+  00:02.0 VGA compatible controller: Intel Corporation Device 7d67 (rev 06)
+    DeviceName: To Be Filled by O.E.M.
+    Subsystem: ASRock Incorporation Device 7d67
+    Kernel driver in use: i915
+  --
+  02:00.0 VGA compatible controller: NVIDIA Corporation Device 2c05 (rev a1)
+    Subsystem: Palit Microsystems Inc. Device f322
+    Kernel driver in use: nvidia
+    Kernel modules: nvidiafb, nouveau, nvidia_drm, nvidia
+  --
+  80:14.5 Non-VGA unclassified device: Intel Corporation Device 7f2f (rev 10)
+    Subsystem: ASRock Incorporation Device 7f2f
+  80:15.0 Serial bus controller: Intel Corporation Device 7f4c (rev 10)
+    Subsystem: ASRock Incorporation Device 7d67
+
+  ```
+  
+  - 以下を /ec/X11/xorg.conf に追加
+
+  ```xorg.conf
+  Section "Device"
+    Identifier "intel"
+    Driver "intel"
+    BusID "PCI:0:2:0"
+  EndSection
+  ```
+  
+  - なんかうまくいかない。intel が動いてないのか。

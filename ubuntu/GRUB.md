@@ -9,7 +9,7 @@
 ```sh
 GRUB_DEFAULT=2                # デフォルトでWindowsを起動
 GRUB_TIMEOUT_STYLE=countdown  # カウントダウン表示
-GRUB_TIMEOUT=10               # 10秒後に自動起動
+GRUB_TIMEOUT=10               # 10秒後に自動起動(-1で無期限)
 GRUB_GFXMODE=1920x1080-24     # 解像度指定
 GRUB_GFXPAYLOAD_LINUX=keep    # Linuxカーネルにも同じ解像度を適用
 ```

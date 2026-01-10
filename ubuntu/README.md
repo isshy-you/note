@@ -2,7 +2,8 @@
 
 ## 概要
 
-このリポジトリは個人用のメモやノートを管理するためのものです。
+- このリポジトリは個人用のメモやノートを管理するためのものです。
+- ubuntu 関連を集めています
 
 ## 目次
 
@@ -12,3 +13,4 @@
 - [nvidia インストール](nvidia-install.md)
 - [AI Challange 2025 setup](AIchallange2025.md)
 - [install VS Code](vscode.md)
+- [SVD-webui](SVD-webui_ubuntu.md)
